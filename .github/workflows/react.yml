@@ -23,7 +23,8 @@ jobs:
     - uses: actions/cache@v2
       id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
       with:
-         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+         path: ~/actions-runner/_work/reactjs
+         #${{ steps.yarn-cache-dir-path.outputs.dir }}
          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
          restore-keys: |
            ${{ runner.os }}-yarn-
@@ -37,8 +38,8 @@ jobs:
 #           ${{ runner.os }}-yarn-
 
 
-    - run: yarn install
-    - run: yarn build   
+#     - run: yarn install
+#     - run: yarn build   
 #     - run: npm i
 #     - run: npm build
 #     - run: pm2 stop 0
