@@ -11,7 +11,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      
+    - uses: c-hive/gha-yarn-cache@v1
+ 
+ 
+ 
 #     - name: Cache npm dependencies
 #       uses: actions/cache@v1
 #       with:
@@ -20,14 +23,14 @@ jobs:
 #         restore-keys: |
 #           ${{ runner.os }}-node-
           
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-         path: ~/actions-runner/_work/reactjs
-         #${{ steps.yarn-cache-dir-path.outputs.dir }}
-         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-         restore-keys: |
-           ${{ runner.os }}-yarn-
+#     - uses: actions/cache@v2
+#       id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+#       with:
+#          path: ~/actions-runner/_work/reactjs
+#          #${{ steps.yarn-cache-dir-path.outputs.dir }}
+#          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#          restore-keys: |
+#            ${{ runner.os }}-yarn-
           
 #     - name: Cache yarn dependencies
 #       uses: actions/cache@v2
